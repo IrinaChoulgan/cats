@@ -36,6 +36,10 @@ const NavigationLink = styled.a`
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.5px;
+
+  &:hover {
+    color: #f07f2e;
+  }
 `;
 
 const Header = () => {
