@@ -1,13 +1,16 @@
-import { Header, Container, Hero, Cats, Gallery } from './components';
+import { Header, Container, Hero, Cats, Gallery, Footer } from './components';
 
 function App() {
   return (
-    <Container>
-      <Header />
-      <Hero />
-      <Cats />
-      <Gallery />
-    </Container>
+    <>
+      <Container>
+        <Header />
+        <Hero />
+        <Cats />
+        <Gallery />
+      </Container>
+      <Footer />
+    </>
   );
 }
 
