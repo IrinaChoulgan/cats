@@ -10,11 +10,21 @@ const FooterSection = styled.footer`
   padding-bottom: 48px;
   background-color: #0f3f3c;
 `;
+const FooterBr = styled.br`
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
 
 const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const FooterText = styled.p`
@@ -57,6 +67,11 @@ const SocialText = styled.p`
   letter-spacing: 0.5px;
   color: #ffffff;
   text-align: right;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 15px;
+    text-align: center;
+  }
 `;
 
 const Footer = () => {
@@ -66,7 +81,7 @@ const Footer = () => {
         <FooterContainer>
           <FooterText>
             <img src={Logo} alt="логотип сайту" width="24" height="24" />
-            Котики — то щастя. <br />
+            Котики — то щастя. <FooterBr />
             Забирай, люби й ставай щасливішим.
           </FooterText>
 

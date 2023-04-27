@@ -19,7 +19,14 @@ const SectionHero = styled.section`
   padding: 24px;
   background: #0f3f3c;
   border-radius: 16px;
-  width: 432px;
+  min-width: 432px;
+
+  @media screen and (max-width: 768px) {
+    min-width: 150px;
+    left: 0;
+    bottom: 15px;
+    padding: 15px;
+  }
 `;
 
 const HeroTitle = styled.h1`
@@ -28,12 +35,20 @@ const HeroTitle = styled.h1`
   letter-spacing: 1.25px;
   color: #ffffff;
   margin-bottom: 8px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 25px;
+  }
 `;
 
 const HeroText = styled.p`
   line-height: 24px;
   letter-spacing: 0.5px;
   color: #ffffff;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const Hero = () => {

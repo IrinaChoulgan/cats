@@ -36,6 +36,10 @@ const GaleryItem = styled.li`
   &:hover {
     filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25));
   }
+
+  @media screen and (max-width: 768px) {
+    flex-basis: calc((100% - 2 * 16px) / 3);
+  }
 `;
 
 const Gallery = () => {

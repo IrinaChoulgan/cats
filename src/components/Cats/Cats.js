@@ -19,6 +19,11 @@ const CatList = styled.ul`
   display: flex;
   gap: 40px;
   margin-top: 40px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const CatItem = styled.li`
@@ -27,6 +32,11 @@ const CatItem = styled.li`
 
   &:hover {
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+  }
+  @media screen and (max-width: 768px) {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
   }
 `;
 
