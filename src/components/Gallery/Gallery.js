@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import GallerySlider from './Slider';
 import { data } from './data';
 
 const GallerySection = styled.p`
@@ -50,13 +51,14 @@ const Gallery = () => {
         Ти тільки поглянь, скільки ніжності! <br />
         На місці цих задоволених людей можеш бути ти.
       </GalleryText>
-      <GalleryList>
+      <GallerySlider />
+      {/* <GalleryList>
         {data.map((data, index) => (
           <GaleryItem key={index}>
             <img src={data.src} alt="galery item" />
           </GaleryItem>
         ))}
-      </GalleryList>
+      </GalleryList> */}
     </GallerySection>
   );
 };
