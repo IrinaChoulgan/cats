@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Logo from '../../assets/cat.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { AiOutlineHeart } from 'react-icons/ai';
 
 const LogoSite = styled.a`
   font-weight: 700;
@@ -37,9 +38,18 @@ const HeaderNavigation = styled.nav`
   left: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
   height: 100vh;
   width: 100%;
-  background: #fff;
-  transition: all 0.3s ease-in-out;
-  z-index: 1;
+  z-index: 2;
+
+  @media screen and (min-width: 769px) {
+    flex-direction: row;
+    position: static;
+    height: auto;
+    width: auto;
+    background: none;
+    transition: none;
+    z-index: auto;
+    margin-left: auto;
+  }
 `;
 
 const NavigationLink = styled.a`
@@ -53,7 +63,15 @@ const NavigationLink = styled.a`
     color: #f07f2e;
   }
 `;
-
+const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 2;
+`;
 const BurgerMenu = styled.div`
   display: none;
   color: #2c2c2c;
@@ -62,7 +80,7 @@ const BurgerMenu = styled.div`
 
   @media screen and (max-width: 768px) {
     display: block;
-    z-index: 2;
+    z-index: 5;
   }
 
   &:hover {
@@ -72,8 +90,19 @@ const BurgerMenu = styled.div`
 
 const CloseIcon = styled(FaTimes)`
   color: #2c2c2c;
+  position: fixed;
   font-size: 24px;
   cursor: pointer;
+`;
+
+const StyledAiOutlineHeart = styled(AiOutlineHeart)`
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+
+  &:hover {
+    fill: #f07f2e;
+  }
 `;
 
 const Header = () => {
@@ -89,7 +118,10 @@ const Header = () => {
         <LogoImg src={Logo} alt="logo" />
         Котодім
       </LogoSite>
+      <StyledAiOutlineHeart />
       <BurgerMenu onClick={toggleMenu}>{isOpen ? <CloseIcon /> : <FaBars />}</BurgerMenu>
+      {isOpen && <Backdrop onClick={toggleMenu} />}
+
       <HeaderNavigation isOpen={isOpen}>
         <NavigationLink href="">Обрати котика</NavigationLink>
         <NavigationLink href="">Задонатити котикам</NavigationLink>

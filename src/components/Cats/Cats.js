@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { AiFillHeart } from 'react-icons/ai';
 
 import { data } from './data';
 
@@ -29,6 +30,7 @@ const CatList = styled.ul`
 const CatItem = styled.li`
   overflow: hidden;
   border-radius: 16px;
+  position: relative;
 
   &:hover {
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
@@ -54,7 +56,41 @@ const ContentText = styled.p`
   color: #2c2c2c;
 `;
 
+const StyledAiFillHeart = styled(AiFillHeart)`
+  position: absolute;
+  width: 33px;
+  height: 35px;
+  fill: white;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+
+  &:hover {
+    fill: #f07f2e;
+  }
+`;
+
 const Cats = () => {
+  const [favoriteCats, setFavoriteCats] = useState([]);
+
+  const handleClick = (id) => {
+    const index = favoriteCats.indexOf(id);
+    if (index === -1) {
+      const newFavorites = [...favoriteCats, id];
+      setFavoriteCats(newFavorites);
+      localStorage.setItem('favoriteCats', JSON.stringify(newFavorites));
+    } else {
+      const newFavorites = [...favoriteCats];
+      newFavorites.splice(index, 1);
+      setFavoriteCats(newFavorites);
+      localStorage.setItem('favoriteCats', JSON.stringify(newFavorites));
+    }
+  };
+
+  // useEffect(() => {
+  //   localStorage.setItem('favoriteCats', JSON.stringify(favoriteCats));
+  // }, [favoriteCats]);
+
   return (
     <SectionCats>
       <SectionTitle>Ці друзяки готові приймати твою любов і піклування</SectionTitle>
@@ -66,6 +102,7 @@ const Cats = () => {
               <ContentTitle>{data.title}</ContentTitle>
               <ContentText>{data.text}</ContentText>
             </CatsContent>
+            <StyledAiFillHeart onClick={() => handleClick(data.id)} />
           </CatItem>
         ))}
       </CatList>
