@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from '../../assets/cat.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -107,7 +108,11 @@ const StyledAiOutlineHeart = styled(AiOutlineHeart)`
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate('/favorites');
+  };
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -118,14 +123,14 @@ const Header = () => {
         <LogoImg src={Logo} alt="logo" />
         Котодім
       </LogoSite>
-      <StyledAiOutlineHeart />
+      <StyledAiOutlineHeart onClick={handleClick} />
       <BurgerMenu onClick={toggleMenu}>{isOpen ? <CloseIcon /> : <FaBars />}</BurgerMenu>
       {isOpen && <Backdrop onClick={toggleMenu} />}
 
       <HeaderNavigation isOpen={isOpen}>
         <NavigationLink href="">Обрати котика</NavigationLink>
-        <NavigationLink href="">Задонатити котикам</NavigationLink>
-        <NavigationLink href="">Контакти</NavigationLink>
+        <NavigationLink href="/donat">Задонатити котикам</NavigationLink>
+        <NavigationLink href="/contacts">Контакти</NavigationLink>
       </HeaderNavigation>
     </HeaderWrapper>
   );
