@@ -128,7 +128,7 @@ const Header = () => {
       {isOpen && <Backdrop onClick={toggleMenu} />}
 
       <HeaderNavigation isOpen={isOpen}>
-        <NavigationLink href="">Обрати котика</NavigationLink>
+        <NavigationLink href="/">Обрати котика</NavigationLink>
         <NavigationLink href="/donat">Задонатити котикам</NavigationLink>
         <NavigationLink href="/contacts">Контакти</NavigationLink>
       </HeaderNavigation>
