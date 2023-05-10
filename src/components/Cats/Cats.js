@@ -73,10 +73,10 @@ const StyledAiFillHeart = styled(AiFillHeart)`
 const Cats = () => {
   const [favoriteCats, setFavoriteCats] = useState([]);
 
-  const handleClick = (id) => {
-    const index = favoriteCats.indexOf(id);
+  const handleClick = (src) => {
+    const index = favoriteCats.indexOf(src);
     if (index === -1) {
-      const newFavorites = [...favoriteCats, id];
+      const newFavorites = [...favoriteCats, src];
       setFavoriteCats(newFavorites);
       localStorage.setItem('favoriteCats', JSON.stringify(newFavorites));
     } else {
@@ -102,7 +102,7 @@ const Cats = () => {
               <ContentTitle>{data.title}</ContentTitle>
               <ContentText>{data.text}</ContentText>
             </CatsContent>
-            <StyledAiFillHeart onClick={() => handleClick(data.id)} />
+            <StyledAiFillHeart onClick={() => handleClick(data.src)} />
           </CatItem>
         ))}
       </CatList>

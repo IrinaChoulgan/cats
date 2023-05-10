@@ -20,6 +20,7 @@ const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 0 0 auto;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -85,7 +86,7 @@ const Footer = () => {
             Забирай, люби й ставай щасливішим.
           </FooterText>
 
-          <section class="social">
+          <section>
             <SocialText>Соцмережі</SocialText>
 
             <SocialLinks>
