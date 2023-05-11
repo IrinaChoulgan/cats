@@ -6,6 +6,8 @@ const StyledMap = styled.iframe`
   margin-top: 30px;
   width: 600px;
   height: 450px;
+  border: 5px solid #f07f2e;
+  border-radius: 10px;
 `;
 const StyledWrapper = styled.div`
   display: flex;

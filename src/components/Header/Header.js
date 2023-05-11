@@ -49,7 +49,6 @@ const HeaderNavigation = styled.nav`
     background: none;
     transition: none;
     z-index: auto;
-    margin-left: auto;
   }
 `;
 
@@ -128,7 +127,7 @@ const Header = () => {
       {isOpen && <Backdrop onClick={toggleMenu} />}
 
       <HeaderNavigation isOpen={isOpen}>
-        <NavigationLink href="/">Обрати котика</NavigationLink>
+        <NavigationLink href="#cat-section">Обрати котика</NavigationLink>
         <NavigationLink href="/donat">Задонатити котикам</NavigationLink>
         <NavigationLink href="/contacts">Контакти</NavigationLink>
       </HeaderNavigation>

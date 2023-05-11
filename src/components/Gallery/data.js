@@ -1,15 +1,12 @@
-import Photo1 from '../../assets/photo1.png';
-import Photo2 from '../../assets/photo2.png';
-import Photo3 from '../../assets/photo3.png';
-import Photo4 from '../../assets/photo4.png';
-import Photo5 from '../../assets/photo5.png';
-import Photo6 from '../../assets/photo6.png';
-import Photo7 from '../../assets/photo7.png';
-import Photo8 from '../../assets/photo8.png';
-import Photo9 from '../../assets/photo9.png';
-import Photo10 from '../../assets/photo10.png';
-import Photo11 from '../../assets/photo11.png';
-import Photo12 from '../../assets/photo12.png';
+import Photo1 from '../../assets/photo1.jpeg';
+import Photo2 from '../../assets/photo2.jpeg';
+import Photo3 from '../../assets/photo3.jpeg';
+import Photo4 from '../../assets/photo4.jpeg';
+import Photo5 from '../../assets/photo5.jpeg';
+import Photo6 from '../../assets/photo6.jpeg';
+import Photo7 from '../../assets/photo7.jpeg';
+import Photo8 from '../../assets/photo8.jpeg';
+import Photo9 from '../../assets/photo9.jpeg';
 
 export const data = [
   {
@@ -38,14 +35,5 @@ export const data = [
   },
   {
     src: `${Photo9}`
-  },
-  {
-    src: `${Photo10}`
-  },
-  {
-    src: `${Photo11}`
-  },
-  {
-    src: `${Photo12}`
   }
 ];

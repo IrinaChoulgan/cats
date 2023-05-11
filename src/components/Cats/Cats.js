@@ -92,7 +92,7 @@ const Cats = () => {
   // }, [favoriteCats]);
 
   return (
-    <SectionCats>
+    <SectionCats id="cat-section">
       <SectionTitle>Ці друзяки готові приймати твою любов і піклування</SectionTitle>
       <CatList>
         {data.map((data, index) => (
